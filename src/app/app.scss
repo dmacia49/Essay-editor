@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  white-space: pre-wrap;
+
+  app-essay-editor,
+  app-flag-suggest-panel {
+    flex: 1;
+    min-width: 0;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    .app-essay-editor,
+    .app-flag-suggest-panel {
+      width: 100%;
+    }
+  }
+}

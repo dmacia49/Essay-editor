@@ -1,0 +1,18 @@
+<div
+  #editor
+  class="essay-editor"
+  contenteditable="true"
+  dir="ltr"
+  spellcheck="true"
+  role="textbox"
+  aria-multiline="true"
+  aria-label="Essay Editor"
+  (input)="onContentChange($event)"
+  style="white-space: pre-wrap"
+></div>
+
+<div class="editor-footer">
+  <span>Word count: {{ wordCount }}</span>
+  <button (click)="clearText()">Clear</button>
+  <button (click)="undoLastChange()">Undo</button>
+</div>

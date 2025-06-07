@@ -1,17 +1,25 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterModule } from '@angular/router';
 import { App } from './app';
+import { EssayEditor } from './components/essay-editor/essay-editor';
+import { FlagSuggestPanel } from './components/flag-suggest-panel/flag-suggest-panel';
+import { FormsModule } from '@angular/forms';
+
 
 describe('App', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterModule.forRoot([])
+        RouterModule.forRoot([]),
+        FormsModule
       ],
       declarations: [
-        App
-      ],
+        App,
+        EssayEditor,
+        FlagSuggestPanel
+      ]
     }).compileComponents();
+
   });
 
   it('should create the app', () => {
@@ -20,10 +28,15 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render title', () => {
+  it('should contain app-essay-editor component', () => {
     const fixture = TestBed.createComponent(App);
-    fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, essay01');
+    expect(compiled.querySelector('app-essay-editor')).toBeTruthy();
+  });
+
+  it('should contain app-flag-suggest-panel component', () => {
+    const fixture = TestBed.createComponent(App);
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('app-flag-suggest-panel')).toBeTruthy();
   });
 });

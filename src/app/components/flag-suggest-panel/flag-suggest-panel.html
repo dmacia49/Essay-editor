@@ -1,0 +1,20 @@
+<div class="flag-suggest-panel">
+  <label for="flaggedSentence">Flagged Sentence:</label>
+  <input
+    id="flaggedSentence"
+    type="text"
+    [(ngModel)]="flaggedSentence"
+    (input)="flaggedSentenceChange.emit(flaggedSentence)"
+    placeholder="Type sentence to flag"
+  />
+
+  <label for="suggestedImprovement">Suggested Improvement:</label>
+  <input
+    id="suggestedImprovement"
+    type="text"
+    [(ngModel)]="suggestedImprovement"
+    placeholder="Write improved sentence"
+  />
+
+  <button (click)="applySuggestion()" [disabled]="!canApply()">Apply</button>
+</div>
