@@ -46,11 +46,9 @@ For more information on using the Angular CLI, including detailed command refere
 
 Real-Time Sentence Highlighting: As the user types into the Flagged Sentence box, all exact matches of that sentence in the essay should be highlighted in real-time.
 
-When the user clicks the Apply button:
+When the user clicks the Apply button: All instances of the flagged sentence are replaced with the suggestion.
 
-All instances of the flagged sentence are replaced with the suggestion.
-
-Highlighting should be cleared after replacement.
+Highlighting are cleared after replacement.
 
 Case-Insensitive and Flexible Matching
 
